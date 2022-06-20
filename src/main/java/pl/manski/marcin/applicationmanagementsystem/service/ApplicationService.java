@@ -19,7 +19,7 @@ public class ApplicationService {
 
     private final ApplicationRepository applicationRepository;
 
-    public List<Application> getApplications(Integer page, Sort.Direction sort) {
+    public List<Application> getSortedApplications(Integer page, Sort.Direction sort) {
         Pageable sortedByNameAndState;
         if (sort.isAscending()) {
             sortedByNameAndState = PageRequest.of(page, PAGE_DEFAULT_SIZE, Sort.by("name").and(Sort.by("state")));

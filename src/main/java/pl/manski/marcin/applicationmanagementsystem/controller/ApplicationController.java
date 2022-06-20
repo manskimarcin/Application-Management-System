@@ -18,7 +18,7 @@ public class ApplicationController {
     public List<Application> getApplications(@RequestParam(required = false) Integer page, Sort.Direction sort) {
         int pageNumber = page != null && page > 0 ? page : 0;
         Sort.Direction sortDirection = sort != null ? sort : Sort.Direction.ASC;
-        return applicationService.getApplications(pageNumber, sortDirection);
+        return applicationService.getSortedApplications(pageNumber, sortDirection);
     }
 
 
